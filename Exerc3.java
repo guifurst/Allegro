@@ -1,7 +1,3 @@
-#include <iostream>
-
-using namespace std;
-
 class Aluno{
     string nome;
     int periodo;
@@ -34,30 +30,3 @@ public:
         cout<<""<<coef<<endl;
     }
 };
-int main()
-{
-    string nome;
-    int periodo;
-    double coef;
-    Aluno** alunos;
-
-    alunos=new Aluno*[2];
-
-    cout<<"Digite o nome do aluno, o periodo em que ele se encontra e seu coef."<<endl;
-    cin>>nome>>periodo>>coef;
-
-    alunos[0]=new Aluno(nome);
-    alunos[0]->insereCoef(coef);
-    alunos[0]->inserePeriodo(periodo);
-
-    alunos[1]=new Aluno(nome,periodo,coef);
-
-    alunos[0]->ImprimeDados();
-    alunos[1]->ImprimeDados();
-
-    for(int i=0;i<2;i++)
-        delete alunos[i];
-    delete alunos;
-
-    return 0;
-    }
